@@ -90,7 +90,7 @@ No vector search index needed (this app uses standard MongoDB for history storag
 
 ```
 mern-vendor-shortlist/
-├── client/
+├── Frontend/
 │   ├── index.html              # Tailwind CDN injected here
 │   ├── src/
 │   │   ├── api/client.js       # Axios API wrapper
