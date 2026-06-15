@@ -19,6 +19,8 @@ app.use(cors());
 app.use(express.json({ limit: "1mb" }));
 app.use(morgan("dev"));
 
+
+app.get("/", (req, res) => res.send("Backend Running Successfully"));
 app.use("/api/shortlist", shortlistRouter);
 app.use("/api/health", healthRouter);
 
