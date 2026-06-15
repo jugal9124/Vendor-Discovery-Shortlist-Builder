@@ -17,6 +17,11 @@ export default defineConfig({
   server: {
     host: "0.0.0.0",
     // eslint-disable-next-line no-undef
-    port:  Number(process.env.VITE_PORT) || 5173
+    port:  Number(process.env.VITE_PORT) ||  5173,
+    allowedHosts: [
+      // eslint-disable-next-line no-undef
+      process.env.VITE_API_URL
+    ]
+
   },
 });
