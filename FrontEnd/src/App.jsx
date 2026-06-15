@@ -15,7 +15,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/results/:id" element={<Results />} />
           <Route path="/history" element={<History />} />
-          <Route path="/status" element={<Status />} />
+          {/* <Route path="/status" element={<Status />} /> */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
