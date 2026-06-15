@@ -15,8 +15,8 @@ export default defineConfig({
     ),
   },
   server: {
-    proxy: {
-      "/api": { target: "http://localhost:5000", changeOrigin: true },
-    },
+    host: "0.0.0.0",
+    // eslint-disable-next-line no-undef
+    port:  Number(process.env.VITE_PORT) || 5173
   },
 });
