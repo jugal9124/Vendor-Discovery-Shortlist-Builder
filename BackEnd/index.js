@@ -9,7 +9,7 @@ import path from "path";
 import shortlistRouter from "./routes/shortlist.js";
 import healthRouter from "./routes/health.js";
 
-dotenv.config({path: path.resolve("../.env")});
+dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
