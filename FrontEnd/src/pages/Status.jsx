@@ -83,15 +83,14 @@ export default function Status() {
             {[
               [
                 "Express API",
-                health.services.express === "ok",
-                health.services.express,
-                health,
+                health?.services?.express === "ok",
+                health?.services?.express || "unknown",
                 // "Node.js REST server",
               ],
               [
                 "MongoDB",
-                health.services.mongodb === "connected",
-                health.services.mongodb,
+                health?.services?.mongodb === "connected",
+                health?.services?.mongodb || "unknown",
                 // "Mongoose ODM",
               ],
             ].map(([name, ok, status, /*desc*/]) => (
