@@ -28,7 +28,7 @@ export default function Status() {
     (async () => {
       try {
         const response = await getHealth();
-        setHealth(response.data || response);
+        setHealth(response?.data ?? {});
       } catch (e) {
         setError(e.message);
       } finally {
@@ -85,15 +85,15 @@ export default function Status() {
                 "Express API",
                 health?.services?.express === "ok",
                 health?.services?.express || "unknown",
-                // "Node.js REST server",
+                "Node.js REST server",
               ],
               [
                 "MongoDB",
                 health?.services?.mongodb === "connected",
                 health?.services?.mongodb || "unknown",
-                // "Mongoose ODM",
+                "Mongoose ODM",
               ],
-            ].map(([name, ok, status, /*desc*/]) => (
+            ].map(([name, ok, status, desc]) => (
               <div
                 key={name}
                 className="bg-slate-900 border border-slate-800 rounded-xl p-5"
@@ -107,7 +107,7 @@ export default function Status() {
                 <p className="text-2xl font-bold text-white">
                   {ok ? "Online" : "Offline"}
                 </p>
-                {/* <p className="text-xs text-slate-500 mt-1">{desc}</p> */}
+                <p className="text-xs text-slate-500 mt-1">{desc}</p>
               </div>
             ))}
           </div>
