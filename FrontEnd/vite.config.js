@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": { target: "http://localhost:5000" , changeOrigin: true },
+      "/api": { target: "https://vendor-discovery-shortlist-builder.onrender.com/" || "http://localhost:5000" , changeOrigin: true },
     },
   },
 });
