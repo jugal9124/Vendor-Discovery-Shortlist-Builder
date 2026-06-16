@@ -27,8 +27,8 @@ export default function Status() {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await getHealth();
-        setHealth(data);
+        const response = await getHealth();
+        setHealth(response.data || response);
       } catch (e) {
         setError(e.message);
       } finally {
